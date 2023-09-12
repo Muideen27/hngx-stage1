@@ -16,15 +16,16 @@ app.get('/api', (req, res) => {
   const currentDateTime = new Date();
   // currentDateTime.setMinutes(currentDateTime.getMinutes() - 2);
   // const utcTime = currentDateTime.toISOString().replace('T', ' Time:').replace(/\.\d{3}Z$/, '');
-  const utcTime = currentDateTime.setMinutes(currentDateTime.getMinutes() - 2)
-  const utcTimenew = currentDateTime.toISOString().split('.')[0] + 'Z';
+  // const utcTime = currentDateTime.setMinutes(currentDateTime.getMinutes() - 2)
+  // const utcTimenew = currentDateTime.toISOString().split('.')[0] + 'Z';
+  const utcTime = currentDateTime.toISOString();
 
 
   // Prepare the JSON response
   const responseData = {
     slack_name: slack_name,
     current_day: currentDay,
-    utc_time: utcTimenew,
+    utc_time: utcTime,
     track: track,
     github_file_url: 'https://github.com/Muideen27/hngx-stage1.git/app.js',
     github_repo_url: 'https://github.com/Muideen27/hngx-stage1.git',
