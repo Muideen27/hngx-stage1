@@ -24,7 +24,7 @@ app.get('/api', (req, res) => {
         'current_day': day,
         'utc_time': utcTimenew,
         'track': track,
-        'github_file_url': "https://github.com/Muideen27/hngx-stage1.git/app.js",
+        'github_file_url': "https://github.com/Muideen27/hngx-stage1/blob/main/app.js",
         'github_repo_url': "https://github.com/Muideen27/hngx-stage1.git",
         'status_code': 200
     }
