@@ -12,20 +12,17 @@ app.get('/api', (req, res) => {
   // Get the current day of the week
   const currentDay = new Date().toLocaleDateString('en-US', { weekday: 'long' });
 
-  // Get the current UTC time with a +/- 2 minute window
+  // const currentDateTime = new Date();
   const currentDateTime = new Date();
-  // currentDateTime.setMinutes(currentDateTime.getMinutes() - 2);
-  // const utcTime = currentDateTime.toISOString().replace('T', ' Time:').replace(/\.\d{3}Z$/, '');
-  // const utcTime = currentDateTime.setMinutes(currentDateTime.getMinutes() - 2)
-  // const utcTimenew = currentDateTime.toISOString().split('.')[0] + 'Z';
-  const utcTime = currentDateTime.toISOString();
+  const utcTime = currentDateTime.setMinutes(currentDateTime.getMinutes() - 2)
+  const utcTimenew = currentDateTime.toISOString().split('.')[0] + 'Z';
 
 
   // Prepare the JSON response
   const responseData = {
     slack_name: slack_name,
     current_day: currentDay,
-    utc_time: utcTime,
+    utc_time: utcTimenew,
     track: track,
     github_file_url: 'https://github.com/Muideen27/hngx-stage1.git/app.js',
     github_repo_url: 'https://github.com/Muideen27/hngx-stage1.git',
